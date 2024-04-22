@@ -98,7 +98,7 @@ describe('parse', () => {
     test('use MaxCDN SVGs by default', () => {
       expect(parse('I \u2764 emoji!')).toMatchObject([
         {
-          url: 'https://twemoji.maxcdn.com/v/latest/svg/2764.svg'
+          url: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2764.svg'
         }
       ]);
     });
@@ -106,7 +106,7 @@ describe('parse', () => {
     test('can ask for MaxCDN PNGs', () => {
       expect(parse('I \u2764 emoji!', { assetType: 'png' })).toMatchObject([
         {
-          url: 'https://twemoji.maxcdn.com/v/latest/72x72/2764.png'
+          url: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2764.png'
         }
       ]);
     });
@@ -114,7 +114,7 @@ describe('parse', () => {
     test('non-png assetType defaults back to SVG', () => {
       expect(parse('I \u2764 emoji!', { assetType: 'foobar' })).toMatchObject([
         {
-          url: 'https://twemoji.maxcdn.com/v/latest/svg/2764.svg'
+          url: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2764.svg'
         }
       ]);
     });
